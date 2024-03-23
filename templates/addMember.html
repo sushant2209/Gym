@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        .container {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="tel"],
+        form select,
+        form input[type="file"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color:#ff0000c1;
+            color: white;
+            padding: 14px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+       <div class="title">
+        Add Member
+    </div>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="id_name">Name:</label>
+            {{ form.name }}
+            <label for="id_village">Village:</label>
+            {{ form.village }}
+            <label for="id_phone_number">Phone Number:</label>
+            {{ form.phone_number }}
+            <label for="id_photo">Photo:</label>
+            {{ form.photo }}
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+<h1>pending Fees</h1>
+<ul>
+    {% for member in expired_members %}
+        <li>
+            Name: {{ member.name }}, Village: {{ member.village }}, Phone Number: {{ member.phone_number }}
+            <a href="{% url 'addFees' member.id %}" class="btn btn-primary">Add Fees</a>
+        </li>
+    {% endfor %}
+</ul>

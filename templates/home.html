@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    .boxes {
+        margin-top:30px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 4ch;
+    }
+
+    .box {        
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        height: 140px;
+        width: 140px;
+        background-color: blue; 
+        color: white;
+        flex-direction: column;
+        gap: 15px;
+        cursor: pointer;
+    }
+
+    i {
+        font-size: 30px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+<div>
+    <div class="boxes">
+        <div class="box" onclick="window.location.href='{% url 'addMember' %}' ">
+            <i class="fa-solid fa-user-plus"></i>
+            <div>Add Member</div>
+        </div>
+        <div class="box" onclick="window.location.href='{% url 'members' %}' ">
+            <i class="fa-solid fa-users"></i>
+            <div>View Members</div>
+        </div>
+        <div class="box" onclick="window.location.href='{% url 'pendingFees' %}' ">
+            <i class="fa-solid fa-receipt"></i>
+            <div>Recieve Fees</div>
+        </div>
+        <div class="box" onclick="window.location.href='{% url 'pendingFees' %}' ">
+            <i class="fa-solid fa-clock"></i>
+            <div>Send Reminder</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

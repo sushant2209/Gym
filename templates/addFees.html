@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Fees</title>
+</head>
+<body>
+    <h1>Add Fees</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="membershipDuration1">
+            <input type="radio" id="membershipDuration1" name="membershipDuration" value="1">
+            1 Month Membership
+        </label><br>
+        <label for="membershipDuration2">
+            <input type="radio" id="membershipDuration2" name="membershipDuration" value="2">
+            2 Months Membership
+        </label><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
