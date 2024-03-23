@@ -16,7 +16,7 @@ def addMember(request):
             return redirect('/success')  
     else:
         form = UserProfileForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'addMember.html', {'form': form})
 
 def pendingFees(request):
     # Retrieve members whose memberships have ended (membership_end_date is in the past) or membership_end_date is None
